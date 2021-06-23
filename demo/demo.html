@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown-displayer Demo</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/github-markdown.css">
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js -->
+    <script src="js/showdown.min.js"></script>
+</head>
+<body>
+    <div id="show-area" class="clearfix"></div>
+    <script>
+        window.onload = function () {
+            translateMarkdown("# Markdown-displayer Demo");
+        }
+        function translateMarkdown(mdValue) {
+            console.log(mdValue);
+            var converter = new showdown.Converter();
+            var html = converter.makeHtml(mdValue);
+            document.getElementById("show-area").innerHTML = html;
+        }
+    </script>
+</body>
+</html>
